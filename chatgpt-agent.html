@@ -66,11 +66,12 @@
             box-shadow: 0 15px 35px rgba(90,138,90,0.12);
         }
         .video-container video {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            display: block;
+        width: 100%;
+        height: auto;         
+        display: block;
+        object-fit: contain;   
         }
+
         .video-info {
             padding: 20px;
             text-align: center;
@@ -97,8 +98,6 @@
         <h1>ChatGPT Agent</h1>
 
         <div class="video-grid">
-            <!-- Example hard-coded videos. Update filenames and titles to match your files. -->
-            
             <div class="video-container">
                 <video controls preload="metadata">
                     <source src="ChatGPT%20Agent/ChatGPTAgent_Task1_Success.mp4" type="video/mp4">
