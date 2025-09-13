@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claude - AI Tools Hub</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .back-btn {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+        
+        .back-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            color: #ff6b35;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        
+        .icon {
+            font-size: 3em;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .description {
+            color: #333;
+            font-size: 1.1em;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .feature-card {
+            background: #fff5f0;
+            padding: 25px;
+            border-radius: 15px;
+            border-left: 4px solid #ff6b35;
+        }
+        
+        .feature-title {
+            color: #ff6b35;
+            font-weight: 600;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+        
+        .feature-text {
+            color: #666;
+            line-height: 1.5;
+        }
+        
+        .capabilities {
+            background: #fff5f0;
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 30px;
+        }
+        
+        .capabilities h3 {
+            color: #ff6b35;
+            margin-bottom: 20px;
+            font-size: 1.4em;
+            text-align: center;
+        }
+        
+        .capability-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        
+        .capability-item {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.2s ease;
+        }
+        
+        .capability-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 107, 53, 0.1);
+        }
+        
+        .capability-icon {
+            font-size: 2em;
+            margin-bottom: 10px;
+            display: block;
+        }
+        
+        .capability-name {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 5px;
+        }
+        
+        .capability-desc {
+            font-size: 0.9em;
+            color: #666;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px 20px;
+            }
+            
+            h1 {
+                font-size: 2em;
+            }
+            
+            .features {
+                grid-template-columns: 1fr;
+            }
+            
+            .capability-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a href="index.html" class="back-btn">← Back to Home</a>
+    </div>
+    
+    <div class="container">
+        <div class="icon">🧠</div>
+        <h1>Claude</h1>
+        <p class="description">
+            Anthropic's intelligent assistant designed for helpful, harmless, and honest interactions. 
+            Claude excels at analysis, writing, coding, math, and creative tasks while maintaining 
+            strong ethical guidelines and safety measures.
+        </p>
+        
+        <div class="features">
+            <div class="feature-card">
+                <h4 class="feature-title">Advanced Reasoning</h4>
+                <p class="feature-text">
+                    Complex problem-solving with step-by-step analysis, logical reasoning, and critical thinking capabilities.
+                </p>
+            </div>
+            
+            <div class="feature-card">
+                <h4 class="feature-title">Creative Writing</h4>
+                <p class="feature-text">
+                    Generate high-quality content, stories, poetry, and creative works with sophisticated language understanding.
+                </p>
+            </div>
+            
+            <div class="feature-card">
+                <h4 class="feature-title">Code Analysis</h4>
+                <p class="feature-text">
+                    Review, debug, and improve code across multiple programming languages with detailed explanations.
+                </p>
+            </div>
+            
+            <div class="feature-card">
+                <h4 class="feature-title">Research Assistant</h4>
+                <p class="feature-text">
+                    Comprehensive research support with information synthesis, fact-checking, and detailed analysis.
+                </p>
+            </div>
+        </div>
+        
+        <div class="capabilities">
+            <h3>Core Capabilities</h3>
+            <div class="capability-grid">
+                <div class="capability-item">
+                    <span class="capability-icon">📝</span>
+                    <div class="capability-name">Writing</div>
+                    <div class="capability-desc">Essays, articles, creative content</div>
+                </div>
+                
+                <div class="capability-item">
+                    <span class="capability-icon">🔍</span>
+                    <div class="capability-name">Analysis</div>
+                    <div class="capability-desc">Data interpretation, research</div>
+                </div>
+                
+                <div class="capability-item">
+                    <span class="capability-icon">💻</span>
+                    <div class="capability-name">Coding</div>
+                    <div class="capability-desc">Programming, debugging, review</div>
+                </div>
+                
+                <div class="capability-item">
+                    <span class="capability-icon">🧮</span>
+                    <div class="capability-name">Mathematics</div>
+                    <div class="capability-desc">Problem solving, calculations</div>
+                </div>
+                
+                <div class="capability-item">
+                    <span class="capability-icon">🌐</span>
+                    <div class="capability-name">Languages</div>
+                    <div class="capability-desc">Translation, multilingual support</div>
+                </div>
+                
+                <div class="capability-item">
+                    <span class="capability-icon">🎨</span>
+                    <div class="capability-name">Creativity</div>
+                    <div class="capability-desc">Brainstorming, ideation</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Function to load videos from the ClaudeSonnet3.5 folder
+        async function loadVideos() {
+            const videoGrid = document.getElementById('videoGrid');
+            const videoFolder = 'ClaudeSonnet3.5'; // Folder name in repository
+            
+            // Common video extensions
+            const videoExtensions = ['mp4', 'webm', 'mov', 'avi', 'mkv'];
+            const videoFiles = [];
+            
+            // Try to find videos with common names and extensions
+            const commonNames = ['demo', 'tutorial', 'example', 'showcase', 'overview', 'intro'];
+            
+            for (const name of commonNames) {
+                for (const ext of videoExtensions) {
+                    const videoPath = `${videoFolder}/${name}.${ext}`;
+                    try {
+                        const response = await fetch(videoPath, { method: 'HEAD' });
+                        if (response.ok) {
+                            videoFiles.push({
+                                path: videoPath,
+                                name: name.charAt(0).toUpperCase() + name.slice(1),
+                                description: `${name.charAt(0).toUpperCase() + name.slice(1)} video demonstration`
+                            });
+                        }
+                    } catch (e) {
+                        // File doesn't exist, continue
+                    }
+                }
+            }
+            
+            // Also try numbered videos (1.mp4, 2.mp4, etc.)
+            for (let i = 1; i <= 10; i++) {
+                for (const ext of videoExtensions) {
+                    const videoPath = `${videoFolder}/${i}.${ext}`;
+                    try {
+                        const response = await fetch(videoPath, { method: 'HEAD' });
+                        if (response.ok) {
+                            videoFiles.push({
+                                path: videoPath,
+                                name: `Demo ${i}`,
+                                description: `Claude demonstration video ${i}`
+                            });
+                        }
+                    } catch (e) {
+                        // File doesn't exist, continue
+                    }
+                }
+            }
+            
+            if (videoFiles.length > 0) {
+                videoGrid.innerHTML = videoFiles.map(video => `
+                    <div class="video-container">
+                        <video controls preload="metadata">
+                            <source src="${video.path}" type="video/mp4">
+                            <source src="${video.path}" type="video/webm">
+                            <source src="${video.path}" type="video/mov">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="video-info">
+                            <div class="video-title">${video.name}</div>
+                            <div class="video-description">${video.description}</div>
+                        </div>
+                    </div>
+                `).join('');
+            } else {
+                videoGrid.innerHTML = `
+                    <div class="no-videos">
+                        No videos found in the ClaudeSonnet3.5 folder.<br>
+                        Add videos to the "ClaudeSonnet3.5" folder in your repository to see them here.
+                    </div>
+                `;
+            }
+        }
+        
+        // Load videos when page loads
+        document.addEventListener('DOMContentLoaded', loadVideos);
+    </script>
+</body>
+</html>
