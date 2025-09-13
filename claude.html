@@ -83,10 +83,10 @@
         }
         
         .video-container video {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            display: block;
+        width: 100%;
+        height: auto;         
+        display: block;
+        object-fit: contain;   
         }
         
         .video-info {
@@ -100,29 +100,12 @@
             font-size: 1.1em;
             letter-spacing: 0.5px;
         }
-        
-        .no-videos {
-            text-align: center;
-            color: #c49a7a;
-            font-style: italic;
-            padding: 60px;
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 20px;
-            border: 1px solid rgba(184, 136, 107, 0.1);
         }
         
         @media (max-width: 768px) {
-            .container {
-                padding: 30px 20px;
-            }
-            
-            h1 {
-                font-size: 2.2em;
-            }
-            
-            .video-grid {
-                grid-template-columns: 1fr;
-            }
+            .container { padding: 30px 20px; }
+            h1 { font-size: 2.2em; }
+            .video-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -130,88 +113,20 @@
     <div class="header">
         <a href="index.html" class="back-btn">← Back to Home</a>
     </div>
-    
+
     <div class="container">
-        <h1>Claude</h1>
-        
-        <div class="video-grid" id="videoGrid">
-            <!-- Videos will be loaded dynamically -->
+        <h1>Claude Sonnet 3.5</h1>
+
+        <div class="video-grid">
+            <div class="video-container">
+                <div class="video-info">
+                    <div class="Task 4: Fail">Task 4: Fail</div>
+                <video controls preload="metadata">
+                    <source src="ClaudeSonnet3.5/ClaudeSonnet_Task4_Fail.mp4" type="video/mp4">
+                </video>
+                </div>
+            </div>
         </div>
     </div>
-    
-    <script>
-        // Function to load videos from the ClaudeSonnet3.5 folder
-        async function loadVideos() {
-            const videoGrid = document.getElementById('videoGrid');
-            const videoFolder = 'ClaudeSonnet3.5'; // Folder name in repository
-            
-            // Common video extensions
-            const videoExtensions = ['mp4', 'webm', 'mov', 'avi', 'mkv'];
-            const videoFiles = [];
-            
-            // Try to find videos with common names and extensions
-            const commonNames = ['demo', 'tutorial', 'example', 'showcase', 'overview', 'intro'];
-            
-            for (const name of commonNames) {
-                for (const ext of videoExtensions) {
-                    const videoPath = `${videoFolder}/${name}.${ext}`;
-                    try {
-                        const response = await fetch(videoPath, { method: 'HEAD' });
-                        if (response.ok) {
-                            videoFiles.push({
-                                path: videoPath,
-                                name: name.charAt(0).toUpperCase() + name.slice(1)
-                            });
-                        }
-                    } catch (e) {
-                        // File doesn't exist, continue
-                    }
-                }
-            }
-            
-            // Also try numbered videos (1.mp4, 2.mp4, etc.)
-            for (let i = 1; i <= 10; i++) {
-                for (const ext of videoExtensions) {
-                    const videoPath = `${videoFolder}/${i}.${ext}`;
-                    try {
-                        const response = await fetch(videoPath, { method: 'HEAD' });
-                        if (response.ok) {
-                            videoFiles.push({
-                                path: videoPath,
-                                name: `Video ${i}`
-                            });
-                        }
-                    } catch (e) {
-                        // File doesn't exist, continue
-                    }
-                }
-            }
-            
-            if (videoFiles.length > 0) {
-                videoGrid.innerHTML = videoFiles.map(video => `
-                    <div class="video-container">
-                        <video controls preload="metadata">
-                            <source src="${video.path}" type="video/mp4">
-                            <source src="${video.path}" type="video/webm">
-                            <source src="${video.path}" type="video/mov">
-                            Your browser does not support the video tag.
-                        </video>
-                        <div class="video-info">
-                            <div class="video-title">${video.name}</div>
-                        </div>
-                    </div>
-                `).join('');
-            } else {
-                videoGrid.innerHTML = `
-                    <div class="no-videos">
-                        No videos found in the ClaudeSonnet3.5 folder
-                    </div>
-                `;
-            }
-        }
-        
-        // Load videos when page loads
-        document.addEventListener('DOMContentLoaded', loadVideos);
-    </script>
 </body>
 </html>
