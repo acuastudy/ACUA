@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACUA Testing Clips</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #e8f5e8;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+        
+        .container {
+            text-align: center;
+            max-width: 800px;
+            width: 100%;
+        }
+        
+        h1 {
+            color: #5a8a5a;
+            font-size: 3em;
+            margin-bottom: 60px;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+        
+        .nav-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .nav-card {
+            background: white;
+            border-radius: 15px;
+            padding: 40px 20px;
+            text-decoration: none;
+            color: #5a8a5a;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(90, 138, 90, 0.1);
+            border: 1px solid rgba(90, 138, 90, 0.1);
+        }
+        
+        .nav-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(90, 138, 90, 0.15);
+            color: #5a8a5a;
+        }
+        
+        .card-title {
+            font-size: 1.4em;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2em;
+                margin-bottom: 40px;
+            }
+            
+            .nav-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .nav-card {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>ACUA Testing Clips</h1>
+        
+        <div class="nav-grid">
+            <a href="chatgpt-agent.html" class="nav-card">
+                <h3 class="card-title">ChatGPT Agent</h3>
+            </a>
+            
+            <a href="claude.html" class="nav-card">
+                <h3 class="card-title">Claude</h3>
+            </a>
+            
+            <a href="self-operating-computer.html" class="nav-card">
+                <h3 class="card-title">Self Operating Computer</h3>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
